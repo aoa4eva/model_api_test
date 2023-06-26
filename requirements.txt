@@ -1,5 +1,5 @@
 langchain
-fastapi
+fastapi[all]
 accelerate
 transformers
 torch
