@@ -4,8 +4,8 @@ import logging
 logger = logging.getLogger(__name__)
 logger.info("Loading model")
 llm = HuggingFacePipeline.from_model_id(
-    model_id="databricks/dolly",
-    task="text-generation",
+    model_id="google/flan-t5-small",
+    task="text2text-generation",
     model_kwargs={"temperature": 0.02, "max_length": 64},
 )
 logger.info("Prompting model")

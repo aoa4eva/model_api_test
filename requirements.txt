@@ -3,3 +3,4 @@ fastapi[all]
 accelerate
 transformers
 torch
+xformers
