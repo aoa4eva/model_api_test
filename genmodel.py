@@ -13,15 +13,8 @@ class GenModel():
         self.hf = HuggingFacePipeline(pipeline=pipe)
 
     def run_prompt(self,question):
-        template = """Question: {question}
-
-        Answer: """
+        template = """Answer this directly: {question}"""
         prompt = PromptTemplate(template=template, input_variables=["question"])
         llm_chain = LLMChain(prompt=prompt, llm=self.hf)
         answer = llm_chain.run(question)
         return answer
-
-question = "What is the capital of Indonesia?"
-setup = GenModel("bigscience/bloom-1b7")
-ans = setup.run_prompt(question)
-print(ans)
